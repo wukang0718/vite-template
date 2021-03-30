@@ -10,7 +10,8 @@ import lang from 'element-plus/lib/locale/lang/zh-cn'
 import 'dayjs/locale/zh-cn'
 
 // 设置 i18n
-locale(lang)
+// build 报错
+// locale(lang)
 
 /**
  * element-plus 按需引用配置

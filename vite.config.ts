@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import'
 import path from 'path'
+import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,12 +17,17 @@ export default defineConfig({
 						return `element-plus/packages/theme-chalk/src/${name}.scss`;
 					},
 					resolveComponent: (name) => {
-						return `element-plus/package/${name}`;
+						return `element-plus/lib/${name}`;
 					},
 					esModule: true,
 					ensureStyleFile: true
 				}
 			]
+		}),
+		legacy({
+			targets: {
+				ie: '11'
+			}
 		})
 	],
 	resolve: {
@@ -44,6 +50,6 @@ export default defineConfig({
 		}
 	},
 	build: {
-		target: 'es2015'
+		target: 'es2015',
 	}
 })

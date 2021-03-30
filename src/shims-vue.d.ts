@@ -9,8 +9,6 @@ declare module '@/theme' {
   import { App } from 'vue'
   export default function (app: App): void
 }
-declare type Nullable<T> = T | null;
-declare type ComponentSize = 'large' | 'medium' | 'small' | 'mini'
 
 // vue-router
 declare module '@/router' {
